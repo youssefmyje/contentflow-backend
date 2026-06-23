@@ -59,6 +59,16 @@ class User(Base):
         nullable=True,
     )
 
+    notion_refresh_token: Mapped[str | None] = mapped_column(
+        String(1000),
+        nullable=True,
+    )
+
+    notion_email: Mapped[str | None] = mapped_column(
+        String(255),
+        nullable=True,
+    )
+
     is_active: Mapped[bool] = mapped_column(
         Boolean,
         nullable=False,

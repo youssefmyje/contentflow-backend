@@ -13,6 +13,11 @@ class Settings(BaseSettings):
     jwt_algorithm: str = "HS256"
     jwt_access_token_expire_minutes: int = 60
 
+    notion_client_id: str
+    notion_client_secret: str
+    notion_redirect_uri: str
+    notion_frontend_redirect_uri: str = "http://127.0.0.1:8000/docs"
+
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",
